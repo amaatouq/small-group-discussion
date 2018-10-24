@@ -108,7 +108,7 @@ export default class Quiz extends React.Component {
               </label>
               <div className="bp3-form-content">
                 <input
-                  id="nParticipants"
+                  id="largeError"
                   className="bp3-input"
                   type="number"
                   min="-10"
@@ -131,7 +131,7 @@ export default class Quiz extends React.Component {
               </label>
               <div className="bp3-form-content">
                 <input
-                  id="nParticipants"
+                  id="idle"
                   className="bp3-input"
                   type="number"
                   min="-10"
