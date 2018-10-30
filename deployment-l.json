@@ -2,9 +2,17 @@
   "admins": [
     {
       "username": "admin",
-      "password": "admin"
+      "password": "mpi2018"
     }
   ],
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb+srv://amaatouq:myPassword@cluster0-mv26a.mongodb.net/group-discussion-l",
+
+      "MONGO_OPLOG_URL": "mongodb+srv://myPassword:mmaatouq95@cluster0-mv26a.mongodb.net/local"
+    }
+  },
+
   "public": {
     "playerIdParam": "workerId",
 

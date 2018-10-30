@@ -51,7 +51,7 @@ Empirica.onRoundEnd((game, round, players) => {
 Empirica.onGameEnd((game, players) => {
   console.log("The game", game._id, "has ended");
   //const nStages = game.treatment.nBlocks * game.players.length + 1;
-  const conversionRate = 1 / (20.0 * 10.0);
+  const conversionRate = game.treatment.conversionRate;
 
   players.forEach(player => {
     const bonus =
@@ -85,6 +85,7 @@ function computeScore(players, round, game) {
     //score increment such that it includes the performance in all stages
     const score = (player.round.get("score") || 0) + scoreIncrement;
 
+    player.stage.set("score", Math.round(score));
     player.round.set("score", Math.round(score));
   });
 }
