@@ -3,7 +3,13 @@ import Empirica from "meteor/empirica:core";
 // onGameStart is triggered opnce per game before the game starts, and before
 // the first onRoundStart. It receives the game and list of all the players in
 // the game.
-Empirica.onGameStart((game, players) => {});
+Empirica.onGameStart((game, players) => {
+  players.forEach(player => {
+    player.set("justStarted", true); // I use this to play the sound on the UI when the game starts
+  })
+  
+  
+});
 
 // onRoundStart is triggered before each round starts, and before onStageStart.
 // It receives the same options as onGameStart, and the round that is starting.

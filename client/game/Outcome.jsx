@@ -10,7 +10,7 @@ export default class Outcome extends React.Component {
         <div className="info">
           <div className="left">
             <img src={player.get("avatar")} className="profile-avatar" />
-            <h4 style={{ color: player.get("arrowColor") }}>
+            <h4 className="bp3-heading" style={{ color: player.get("arrowColor") }}>
               {player.get("name")}
             </h4>
           </div>

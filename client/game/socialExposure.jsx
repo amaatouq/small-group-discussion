@@ -18,7 +18,7 @@ export default class SocialExposure extends React.Component {
           </p>
           <div className="alter bp3-card bp3-elevation-2" key={otherPlayer._id}>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <h5 className={"range"}>YOU are observed</h5>
+              <h5 className="range bp3-heading">YOU are observed</h5>
             </div>
             <div className="range" />
           </div>
@@ -32,9 +32,15 @@ export default class SocialExposure extends React.Component {
             <strong>You observe:</strong>
           </p>
           {!_.isEmpty(otherPlayer) ? (
-            <div className="alter bp3-card bp3-elevation-2" key={otherPlayer._id}>
+            <div
+              className="alter bp3-card bp3-elevation-2"
+              key={otherPlayer._id}
+            >
               <img src={otherPlayer.get("avatar")} className="profile-avatar" />
-              <h4 style={{ color: otherPlayer.get("arrowColor") }}>
+              <h4
+                className="bp3-heading"
+                style={{ color: otherPlayer.get("arrowColor") }}
+              >
                 {otherPlayer.get("name")}
               </h4>{" "}
             </div>

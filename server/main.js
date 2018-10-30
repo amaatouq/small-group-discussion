@@ -11,7 +11,6 @@ import "./bots.js";
 // rounds and stages (with get/set methods), that will be able to use later in
 // the game.
 Empirica.gameInit((game, treatment, players) => {
-  console.log("treatment: ", game.treatment.nGoodPerformers, " will start");
   //for the players names (we will call them A, B, C etc)
   const alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("");
   // similar to the color of the avatar .. to do more go to https://jdenticon.com/#icon-D3
@@ -28,6 +27,7 @@ Empirica.gameInit((game, treatment, players) => {
     Math.ceil(game.treatment.nGoodPerformers * players.length)
   );
   performance = _.shuffle(performance);
+  console.log("treatment: ", game.treatment, " will start with ", performance);
 
   players.forEach((player, i) => {
     player.set("avatar", `/avatars/jdenticon/${alphabet[i] + i}`);
