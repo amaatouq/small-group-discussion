@@ -6,9 +6,7 @@ import Empirica from "meteor/empirica:core";
 Empirica.onGameStart((game, players) => {
   players.forEach(player => {
     player.set("justStarted", true); // I use this to play the sound on the UI when the game starts
-  })
-  
-  
+  });
 });
 
 // onRoundStart is triggered before each round starts, and before onStageStart.
@@ -48,7 +46,10 @@ Empirica.onRoundEnd((game, round, players) => {
   players.forEach(player => {
     const currentScore = player.get("cumulativeScore");
     const roundScore = player.round.get("score");
-    player.set("cumulativeScore", Math.round(currentScore + roundScore));
+    player.set(
+      "cumulativeScore",
+      Math.round(currentScore + roundScore * 100) / 100
+    );
   });
 });
 
@@ -62,7 +63,7 @@ Empirica.onGameEnd((game, players) => {
   players.forEach(player => {
     const bonus =
       player.get("cumulativeScore") > 0
-        ? Math.round(player.get("cumulativeScore") * conversionRate)
+        ? Math.round(player.get("cumulativeScore") * conversionRate * 100) / 100
         : 0;
     player.set("bonus", bonus);
   });
@@ -91,8 +92,8 @@ function computeScore(players, round, game) {
     //score increment such that it includes the performance in all stages
     const score = (player.round.get("score") || 0) + scoreIncrement;
 
-    player.stage.set("score", Math.round(score));
-    player.round.set("score", Math.round(score));
+    player.stage.set("score", Math.round(score * 100) / 100);
+    player.round.set("score", Math.round(score * 100) / 100);
   });
 }
 
