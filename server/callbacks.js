@@ -18,16 +18,24 @@ Empirica.onRoundStart((game, round, players) => {
     //console.log("initiating scores with 0 to start accumulating");
     player.round.set("score", 0);
   });
+
+  //so I know this is the first stage of the round
+  round.set("stageOrder", 1);
 });
 
 // onRoundStart is triggered before each stage starts.
 // It receives the same options as onRoundStart, and the stage that is starting.
-Empirica.onStageStart((game, round, stage, players) => {});
+Empirica.onStageStart((game, round, stage, players) => {
+  //so if they don't change their guess in this particular stage, I keep storing it (rather than NaN).
+  players.forEach(player => {
+    player.stage.set("guess", player.round.get("guess"));
+  });
+});
 
 // onStageEnd is triggered after each stage.
 // It receives the same options as onRoundEnd, and the stage that just ended.
 Empirica.onStageEnd((game, round, stage, players) => {
-  //this is not idea, as we should compute it only once before the round outcome
+  //this is not ideal, as we should compute it only once before the round outcome
   if (stage.name !== "outcome") {
     computeScore(players, round, game);
     colorScores(players);
@@ -35,8 +43,15 @@ Empirica.onStageEnd((game, round, stage, players) => {
     //static social guess
     players.forEach(player => {
       player.round.set("socialGuess", player.round.get("guess"));
+      //if this is the first stage, then this is their initial guess
+      if (round.get("stageOrder") === 1) {
+        player.round.set("initialGuess", player.round.get("guess"));
+      }
     });
   }
+
+  //increment the stage order by one
+  round.set("stageOrder", round.get("stageOrder") + 1);
 });
 
 // onRoundEnd is triggered after each round.
