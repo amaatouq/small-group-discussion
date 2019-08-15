@@ -14,17 +14,17 @@ import {
 export default class ExitSurvey extends React.Component {
   static stepName = "ExitSurvey";
   state = { age: "", gender: "", strategy: "", fair: "", feedback: "" };
-
+  
   handleChange = event => {
     const el = event.currentTarget;
     this.setState({ [el.name]: el.value });
   };
-
+  
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmit(this.state);
   };
-
+  
   exitMessage = (player, game) => {
     return (
       <div>
@@ -47,10 +47,10 @@ export default class ExitSurvey extends React.Component {
       </div>
     );
   };
-
+  
   exitForm = () => {
     const { age, gender, strategy, fair, feedback, education } = this.state;
-
+    
     return (
       <div>
         {" "}
@@ -80,7 +80,7 @@ export default class ExitSurvey extends React.Component {
                 // required
               />
             </FormGroup>
-
+            
             <FormGroup
               inline={true}
               label={"Gender"}
@@ -99,7 +99,7 @@ export default class ExitSurvey extends React.Component {
               />
             </FormGroup>
           </div>
-
+          
           <div className="form-line">
             <RadioGroup
               inline={true}
@@ -138,12 +138,12 @@ export default class ExitSurvey extends React.Component {
               />
             </RadioGroup>
           </div>
-
+          
           <div className="form-line thirds">
             <FormGroup
               className={"form-group"}
               inline={false}
-              label={"How would you describe your strategy in the game?"}
+              label={"How would you describe your strategy?"}
               labelFor={"strategy"}
               //className={"form-group"}
             >
@@ -157,7 +157,7 @@ export default class ExitSurvey extends React.Component {
                 name="strategy"
               />
             </FormGroup>
-
+            
             <FormGroup
               className={"form-group"}
               inline={false}
@@ -175,7 +175,7 @@ export default class ExitSurvey extends React.Component {
                 fill={true}
               />
             </FormGroup>
-
+            
             <FormGroup
               className={"form-group"}
               inline={false}
@@ -194,7 +194,7 @@ export default class ExitSurvey extends React.Component {
               />
             </FormGroup>
           </div>
-
+          
           <Button type="submit" intent={"primary"} rightIcon={"key-enter"}>
             Submit
           </Button>
@@ -202,12 +202,13 @@ export default class ExitSurvey extends React.Component {
       </div>
     );
   };
-
+  
   render() {
     const { player, game } = this.props;
     return (
       <Centered>
         <div className="exit-survey">
+          {console.log(this.props)}
           {this.exitMessage(player, game)}
           <hr />
           {this.exitForm()}

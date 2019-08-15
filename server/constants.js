@@ -1,7 +1,7 @@
 // The task data can go here
 const N_DOTS = 50; //this is not being used yet!
 const DOT_SPEED = 120;
-const DIFF_LVLS = { bad: 0.1, good: 0.4 };
+const DIFF_LVLS = { bad: 0.08, good: 0.4 };
 
 export const taskData = [
   {
@@ -110,42 +110,39 @@ export const taskData = [
     nDots: N_DOTS
   },
 
-  {
-    _id: 15,
-    correctAnswer: 1.5708,
-    answerProportion: DIFF_LVLS,
-    dotSpeed: DOT_SPEED,
-    nDots: N_DOTS
-  },
-
-  {
-    _id: 16,
-    correctAnswer: 0.8378,
-    answerProportion: DIFF_LVLS,
-    dotSpeed: DOT_SPEED,
-    nDots: N_DOTS
-  },
-
-  {
-    _id: 17,
-    correctAnswer: 0.576,
-    answerProportion: DIFF_LVLS,
-    dotSpeed: DOT_SPEED,
-    nDots: N_DOTS
-  },
-
-  {
-    _id: 18,
-    correctAnswer: 0.0524,
-    answerProportion: DIFF_LVLS,
-    dotSpeed: DOT_SPEED,
-    nDots: N_DOTS
-  },
-  {
-    _id: 19,
-    correctAnswer: 0.051,
-    answerProportion: DIFF_LVLS,
-    dotSpeed: DOT_SPEED,
-    nDots: N_DOTS
-  }
+  // {
+  //   _id: 15,
+  //   correctAnswer: 1.5708,
+  //   answerProportion: DIFF_LVLS,
+  //   dotSpeed: DOT_SPEED,
+  //   nDots: N_DOTS
+  // },
+  // {
+  //   _id: 16,
+  //   correctAnswer: 0.8378,
+  //   answerProportion: DIFF_LVLS,
+  //   dotSpeed: DOT_SPEED,
+  //   nDots: N_DOTS
+  // },
+  // {
+  //   _id: 17,
+  //   correctAnswer: 0.576,
+  //   answerProportion: DIFF_LVLS,
+  //   dotSpeed: DOT_SPEED,
+  //   nDots: N_DOTS
+  // },
+  // {
+  //   _id: 18,
+  //   correctAnswer: 0.0524,
+  //   answerProportion: DIFF_LVLS,
+  //   dotSpeed: DOT_SPEED,
+  //   nDots: N_DOTS
+  // },
+  // {
+  //   _id: 19,
+  //   correctAnswer: 0.051,
+  //   answerProportion: DIFF_LVLS,
+  //   dotSpeed: DOT_SPEED,
+  //   nDots: N_DOTS
+  // }
 ];

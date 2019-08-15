@@ -63,7 +63,7 @@ Empirica.onRoundEnd((game, round, players) => {
     const roundScore = player.round.get("score");
     player.set(
       "cumulativeScore",
-      Math.round(currentScore + roundScore * 100) / 100
+      Math.round((currentScore + roundScore) * 100) / 100
     );
   });
 });
@@ -80,7 +80,7 @@ Empirica.onGameEnd((game, players) => {
       player.get("cumulativeScore") > 0
         ? Math.round(player.get("cumulativeScore") * conversionRate * 100) / 100
         : 0;
-    player.set("bonus", bonus);
+    player.set("bonus", bonus > 7 ? 7 : bonus); //upper bound the bonus with 7
   });
 });
 
