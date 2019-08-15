@@ -7,9 +7,8 @@
   ],
   "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb+srv://amaatouq:mmaatouq95@cluster0-mv26a.mongodb.net/group-discussion-l",
-
-      "MONGO_OPLOG_URL": "mongodb+srv://oploguser:mmaatouq95@cluster0-mv26a.mongodb.net/local"
+      "MONGO_URL": "mongodb+srv://amaatouq:mmaatouq95@small-group-discussion-mv26a.mongodb.net/group-discussion-l",
+      "MONGO_OPLOG_URL": "mongodb+srv://oploguser:mmaatouq95@small-group-discussion-mv26a.mongodb.net/local"
     }
   },
 

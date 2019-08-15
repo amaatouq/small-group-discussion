@@ -49,7 +49,7 @@ Empirica.gameInit((game, treatment, players) => {
     round.addStage({
       name: "response",
       displayName: "Response",
-      durationInSeconds: game.treatment.stageDuration
+      durationInSeconds: game.treatment.stageDuration+5 //adding 10 seconds for the initial guess
     });
 
     let shuffledPlayers = null;
@@ -78,7 +78,7 @@ Empirica.gameInit((game, treatment, players) => {
     round.addStage({
       name: "outcome",
       displayName: "outcome",
-      durationInSeconds: game.treatment.stageDuration
+      durationInSeconds: game.treatment.stageDuration+10 //adding 10 seconds in the round outcome
     });
   });
 });
