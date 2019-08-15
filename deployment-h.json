@@ -7,9 +7,8 @@
   ],
   "galaxy.meteor.com": {
     "env": {
-      "MONGO_URL": "mongodb+srv://amaatouq:mmaatouq95@cluster0-mv26a.mongodb.net/group-discussion-h",
-
-      "MONGO_OPLOG_URL": "mongodb+srv://oploguser:mmaatouq95@cluster0-mv26a.mongodb.net/local"
+      "MONGO_URL": "mongodb+srv://empirica:mmaatouq95@cluster0-kgbkd.mongodb.net/group-discussion-h",
+      "MONGO_OPLOG_URL": "mongodb+srv://oploguser:mmaatouq95@cluster0-kgbkd.mongodb.net/local"
     }
   },
 
@@ -23,7 +22,6 @@
     "debug_resetSession": false,
 
     "debug_resetDatabase": true,
-
 
     "debug_gameDebugMode": true
   }
