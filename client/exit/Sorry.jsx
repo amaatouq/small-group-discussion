@@ -74,10 +74,10 @@ export default class Sorry extends React.Component {
             {/*We will send an email notification once the next  HIT is scheduled.*/}
           </p>
           <p>
-            on 23rd of May (Thursday) at 2PM ET
+            Today on 12:30 2PM ET
           </p>
           <p>
-            on the 24th of May (Friday) at 1PM, 2PM, and 3PM ET
+            Today on 2:00PM ET
           </p>
           
           {/*This is not really needed .. all of these people failed to start the game .. if we allow them to submit, then their data will be deleted, we don't want that*/}
