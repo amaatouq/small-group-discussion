@@ -66,7 +66,7 @@ You and a group of friends can play with this experiment as we ran it by followi
 git clone https://github.com/amaatouq/small-group-discussion
 ```
 
-2. Go into the folder with `cd small-group-discussions`
+2. Go into the folder with `cd small-group-discussion`
 3. Install the required dependencies `meteor npm install`
 4. Edit the `admin` password in the settings file `local.json` to something you like.
 5. Run the local instance with `meteor --settings local.json`
